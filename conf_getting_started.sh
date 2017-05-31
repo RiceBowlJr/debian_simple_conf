@@ -31,8 +31,8 @@ gnome-tweak-tool
 # Shortcuts and shits
 
 ## Page up and down to search in history commands
-sudo sed --in-place -e 's/#"\\e\[5~": history-search-backward/"\\e\[5~": history-search-backward/g' /etc/inputrc
-sudo sed --in-place -e 's/#"\\e\[6~": history-search-forward/"\\e\[6~": history-search-forward/g' /etc/inputrc
+sudo sed --in-place -e 's/# "\\e\[5~": history-search-backward/"\\e\[5~": history-search-backward/g' /etc/inputrc
+sudo sed --in-place -e 's/# "\\e\[6~": history-search-forward/"\\e\[6~": history-search-forward/g' /etc/inputrc
 
 # Installation and configuration of other softwares
 
