@@ -14,7 +14,7 @@ sudo apt-get upgrade
 
 # Graphical environment configuration
 
-sudo apt-get install vim hubic build-essential software-properties-common zip terminator gmrun tilda bzip2 redshift wget curl ldap-utils dnsutils apt-transport-https
+sudo apt-get install vim build-essential software-properties-common zip terminator gmrun tilda bzip2 redshift wget curl ldap-utils dnsutils apt-transport-https
 
 echo "Choose /usr/bin/vim/basic, or die"
 sudo update-alternatives --config editor
@@ -57,6 +57,11 @@ sudo ln -s /opt/firefox/firefox /usr/bin/firefox
 #wget -O 'atom-amd64.deb' 'https://atom.io/download/deb'
 #sudo dpkg -i atom-amd64.deb
 #
+### hubiC
+#cd ~/apps/deb
+#wget http://mir7.ovh.net/ovh-applications/hubic/hubiC-Linux/2.1.0/hubiC-Linux-2.1.0.53-linux.deb
+#sudo dpkg -i hubiC-Linux-2.1.0.53-linux.deb
+
 ### KVM/Qemu
 #cd
 #sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon virt-manager
