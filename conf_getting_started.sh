@@ -47,35 +47,39 @@ tar xjf firefox-54.0a2.en-US.linux-x86_64.tar.bz2
 sudo mv firefox /opt/
 sudo ln -s /opt/firefox/firefox /usr/bin/firefox
 
-## Cryptomator
-#cd ~/apps/deb
-#wget -O 'cryptomator-1.2.3-amd64.deb' 'https://bintray.com/cryptomator/cryptomator-deb/download_file?file_path=cryptomator-1.2.3-amd64.deb'
-#sudo dpkg -i cryptomator-1.2.3-amd64.deb
-#
-### Atom graphical text editor
-#cd ~/apps/deb
-#wget -O 'atom-amd64.deb' 'https://atom.io/download/deb'
-#sudo dpkg -i atom-amd64.deb
-#
-### hubiC
-#cd ~/apps/deb
-#wget http://mir7.ovh.net/ovh-applications/hubic/hubiC-Linux/2.1.0/hubiC-Linux-2.1.0.53-linux.deb
-#sudo dpkg -i hubiC-Linux-2.1.0.53-linux.deb
+# Cryptomator
+cd ~/apps/deb
+wget -O 'cryptomator-1.2.3-amd64.deb' 'https://bintray.com/cryptomator/cryptomator-deb/download_file?file_path=cryptomator-1.2.3-amd64.deb'
+sudo dpkg -i cryptomator-1.2.3-amd64.deb
 
-### KVM/Qemu
-#cd
-#sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon virt-manager
-#mkdir ~/cows
-#echo "To edit storage pools and networks, you need to edit with 'virsh pool-edit mypool' or other utility using libvirt API."
-#
-## Docker
-#sudo apt-get install ca-certificates gnupg2
-#curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-#sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable edge"
-#sudo apt-get update
-#sudo apt-get install docker-ce
-#echo "If the message \"Hello world\" is printed in few seconds, that proves that Docker is well installed"
-#sudo docker run hello-world
+### Atom graphical text editor
+cd ~/apps/deb
+wget -O 'atom-amd64.deb' 'https://atom.io/download/deb'
+sudo dpkg -i atom-amd64.deb
+# Fixing some missing dependencies, ugly but that works for now
+sudo apt --fix-broken install
+
+## hubiC
+cd ~/apps/deb
+wget http://mir7.ovh.net/ovh-applications/hubic/hubiC-Linux/2.1.0/hubiC-Linux-2.1.0.53-linux.deb
+sudo dpkg -i hubiC-Linux-2.1.0.53-linux.deb
+# Yeah yeah again, missing dependecies...
+sudo apt --fix-broken install
+
+## KVM/Qemu
+cd
+sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon virt-manager
+mkdir ~/cows
+echo "To edit storage pools and networks, you need to edit with 'virsh pool-edit mypool' or other utility using libvirt API."
+
+# Docker
+sudo apt-get install ca-certificates gnupg2
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable edge"
+sudo apt-get update
+sudo apt-get install docker-ce
+echo "If the message \"Hello world\" is printed in few seconds, that proves that Docker is well installed"
+sudo docker run hello-world
 
 ## Misc utils
 cd
