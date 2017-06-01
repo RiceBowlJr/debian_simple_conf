@@ -68,7 +68,7 @@ sudo apt --fix-broken install
 
 ## KVM/Qemu
 cd
-sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon virt-manager
+sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon virt-manager ssh-askpass-gnome
 mkdir ~/cows
 echo "To edit storage pools and networks, you need to edit with 'virsh pool-edit mypool' or other utility using libvirt API."
 
