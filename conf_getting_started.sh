@@ -19,9 +19,14 @@ sudo apt install vim build-essential software-properties-common zip terminator g
 echo "Choose /usr/bin/vim/basic, or die"
 sudo update-alternatives --config editor
 
-cp config/autostart/*.desktop ~/.config/autostart/
-cp config/redshift.conf ~/.config/
-cp .vimrc ~/
+cp configuration_files/config/autostart/*.desktop ~/.config/autostart/
+cp configuration_files/config/redshift.conf ~/.config/
+mv ~/.bashrc ~/.bashrc.origin
+if [ -f ~/.vimrc ]
+then
+	mv ~/.vimrc
+fi
+cp configuration_files/.* ~/
 
 ## Numix Theme
 sudo apt install numix-gtk-theme numix-icon-theme
