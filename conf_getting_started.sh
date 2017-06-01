@@ -56,6 +56,7 @@ sudo ln -s /opt/firefox/firefox /usr/bin/firefox
 cd ~/apps/deb
 wget -O 'cryptomator-1.2.3-amd64.deb' 'https://bintray.com/cryptomator/cryptomator-deb/download_file?file_path=cryptomator-1.2.3-amd64.deb'
 sudo dpkg -i cryptomator-1.2.3-amd64.deb
+sudo ln -s /opt/Cryptomator/Cryptomator /usr/bin/cryptomator
 
 ### Atom graphical text editor
 cd ~/apps/deb
