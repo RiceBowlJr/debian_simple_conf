@@ -9,12 +9,12 @@
 # usermod -aG sudo ricebowljr
 # killall openbox
 
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt update
+sudo apt upgrade
 
 # Graphical environment configuration
 
-sudo apt-get install vim build-essential software-properties-common zip terminator gmrun tilda bzip2 redshift wget curl ldap-utils dnsutils apt-transport-https
+sudo apt install vim build-essential software-properties-common zip terminator gmrun tilda bzip2 redshift wget curl ldap-utils dnsutils apt-transport-https
 
 echo "Choose /usr/bin/vim/basic, or die"
 sudo update-alternatives --config editor
@@ -24,7 +24,7 @@ cp config/redshift.conf ~/.config/
 cp .vimrc ~/
 
 ## Numix Theme
-sudo apt-get install numix-gtk-theme numix-icon-theme
+sudo apt install numix-gtk-theme numix-icon-theme
 echo "Now you need to apply the theme in 'gnome-tweak-tool', lets do it now!"
 gnome-tweak-tool
 
@@ -68,22 +68,33 @@ sudo apt --fix-broken install
 
 ## KVM/Qemu
 cd
-sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon virt-manager ssh-askpass-gnome
+sudo apt install qemu-kvm libvirt-clients libvirt-daemon virt-manager ssh-askpass-gnome
 mkdir ~/cows
 echo "To edit storage pools and networks, you need to edit with 'virsh pool-edit mypool' or other utility using libvirt API."
 
-# Docker
-sudo apt-get install ca-certificates gnupg2
+## Docker
+sudo apt install ca-certificates gnupg2
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable edge"
-sudo apt-get update
-sudo apt-get install docker-ce
+sudo apt update
+sudo apt install docker-ce
 echo "If the message \"Hello world\" is printed in few seconds, that proves that Docker is well installed"
 sudo docker run hello-world
+
+## PonySay and Fortune to enhance your IT life
+cd ~apps/deb
+wget http://www.vcheng.org/ponysay/ponysay_3.0.2-1_all.deb
+sudo dpkg -i ponysay_3.0.2-1_all.deb
+sudo apt install fortunes
+echo "fortune | ponythink" >> ~/.bashrc
 
 ## Misc utils
 cd
 sudo apt-get install openssh-server rsync vlc
+
+# Conclusion
+
+ponysay "We're all done!"
 
 # From there, add the new theme in obconf, the obt file is in the openbonx conf directory
 wget http://i1.wp.com/abekislevitz.com/wp/wp-content/uploads/2013/10/OwlSpotting3.jpg
