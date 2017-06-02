@@ -16,7 +16,7 @@ sudo apt upgrade
 
 sudo apt install vim build-essential software-properties-common zip terminator gmrun tilda bzip2 redshift wget curl ldap-utils dnsutils apt-transport-https
 
-echo "Choose /usr/bin/vim/basic, or die"
+printf "\n######################################################\n######## Choose /usr/bin/vim/basic, or die ###########\n######################################################"
 sudo update-alternatives --config editor
 
 cp configuration_files/config/autostart/*.desktop ~/.config/autostart/
@@ -30,7 +30,7 @@ cp configuration_files/.* ~/
 
 ## Numix Theme
 sudo apt install numix-gtk-theme numix-icon-theme
-echo "Now you need to apply the theme in 'gnome-tweak-tool', lets do it now!"
+printf "Now you need to apply the theme in 'gnome-tweak-tool', lets do it now!"
 gnome-tweak-tool
 
 # Shortcuts and shits
@@ -76,7 +76,7 @@ sudo apt --fix-broken install
 cd
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon virt-manager ssh-askpass-gnome
 mkdir ~/cows
-echo "To edit storage pools and networks, you need to edit with 'virsh pool-edit mypool' or other utility using libvirt API."
+printf "To edit storage pools and networks, you need to edit with 'virsh pool-edit mypool' or other utility using libvirt API."
 
 ## Docker
 sudo apt install ca-certificates gnupg2
@@ -84,15 +84,16 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable edge"
 sudo apt update
 sudo apt install docker-ce
-echo "If the message \"Hello world\" is printed in few seconds, that proves that Docker is well installed"
+printf "If the message \"Hello world\" is printed in few seconds, that proves that Docker is well installed"
 sudo docker run hello-world
+sudo apt install docker-compose
 
 ## PonySay and Fortune to enhance your IT life
 cd ~apps/deb
 wget http://www.vcheng.org/ponysay/ponysay_3.0.2-1_all.deb
 sudo dpkg -i ponysay_3.0.2-1_all.deb
 sudo apt install fortunes
-echo "fortune | ponythink" >> ~/.bashrc
+printf "fortune | ponythink" >> ~/.bashrc
 
 ## Misc utils
 cd
