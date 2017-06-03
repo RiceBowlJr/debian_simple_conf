@@ -88,6 +88,13 @@ printf "If the message \"Hello world\" is printed in few seconds, that proves th
 sudo docker run hello-world
 sudo apt install docker-compose
 
+## KeeWeb (KeepassX but beautiful)
+cd ~/apps/deb
+wget https://github.com/keeweb/keeweb/releases/download/v1.5.3/KeeWeb-1.5.3.linux.x64.deb
+sudo dpkg -i KeeWeb-1.5.3.linux.x64.deb
+# Yeah again, missing dependecies...
+sudo apt --fix-broken install
+
 ## PonySay and Fortune to enhance your IT life
 cd ~apps/deb
 wget http://www.vcheng.org/ponysay/ponysay_3.0.2-1_all.deb
