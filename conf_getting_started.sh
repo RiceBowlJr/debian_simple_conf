@@ -14,7 +14,7 @@ sudo apt upgrade
 
 # Graphical environment configuration
 
-sudo apt install vim build-essential software-properties-common zip terminator gmrun tilda bzip2 redshift wget curl ldap-utils dnsutils apt-transport-https
+sudo apt install vim build-essential software-properties-common zip terminator gmrun tilda bzip2 redshift wget curl ldap-utils dnsutils apt-transport-https libcanberra-gtk-module
 
 printf "\n######################################################\n######## Choose /usr/bin/vim/basic, or die ###########\n######################################################"
 sudo update-alternatives --config editor
