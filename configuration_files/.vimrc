@@ -17,7 +17,7 @@ set fileencoding=utf-8
 
 " Set the indentation
 filetype plugin indent on
-show existing tab with 4 spaces width
+" show existing tab with 4 spaces width
 set tabstop=4
 " When indenting with '>', use 4 spaces width
 set shiftwidth=4
