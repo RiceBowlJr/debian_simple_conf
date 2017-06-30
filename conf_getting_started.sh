@@ -108,7 +108,7 @@ printf "fortune | ponythink" >> ~/.bashrc
 
 ## Misc utils
 cd
-sudo apt-get install openssh-server rsync vlc
+sudo apt-get install openssh-server rsync vlc parcellite
 
 # Conclusion
 
