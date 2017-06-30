@@ -24,13 +24,14 @@ cp configuration_files/config/redshift.conf ~/.config/
 mv ~/.bashrc ~/.bashrc.origin
 if [ -f ~/.vimrc ]
 then
-	mv ~/.vimrc
+	mv ~/.vimrc ~/.vimrc.origin
 fi
 cp configuration_files/.* ~/
 
 ## Numix Theme
 sudo apt install numix-gtk-theme numix-icon-theme
 printf "Now you need to apply the theme in 'gnome-tweak-tool', lets do it now!"
+wait(3)
 gnome-tweak-tool
 
 # Shortcuts and shits
@@ -38,6 +39,9 @@ gnome-tweak-tool
 ## Page up and down to search in history commands
 sudo sed --in-place -e 's/# "\\e\[5~": history-search-backward/"\\e\[5~": history-search-backward/g' /etc/inputrc
 sudo sed --in-place -e 's/# "\\e\[6~": history-search-forward/"\\e\[6~": history-search-forward/g' /etc/inputrc
+
+## Set DNS to FreeDNS in Dhclient, to force Dhclient to ask those precise DNS nameservers
+sudo sed --in-place -e 's/#prepend domain-name-servers 127.0.0.1;/prepend domain-name-servers 37.235.1.174, 37.235.1.177;/g' /etc/dhcp/dhclient.conf
 
 # Installation and configuration of other softwares
 
